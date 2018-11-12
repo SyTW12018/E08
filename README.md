@@ -12,8 +12,6 @@ $ npm run dev
 $ sudo npm install -g @angular/cli@latest
 $ npm install
 ```
-Alumnos: `Iván Josué Borges González`
-         alu0100880755@ull.edu.es
-
-         `Kathrina Arrocha Umpierrez`
-          alu0100913293@ull.edu.es
+Alumnos: `Iván Josué Borges González` `Kathrina Arrocha Umpierrez`
+          alu0100880755@ull.edu.es     alu0100913293@ull.edu.es
+          
