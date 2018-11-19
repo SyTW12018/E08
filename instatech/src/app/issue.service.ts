@@ -18,6 +18,10 @@ export class IssueService {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
 
+  getIssueByCorreo(correo) {
+    return this.http.get(`${this.uri}/issues/usuario/${correo}`);
+  }
+
   addIssue(nombre, apellido1, apellido2, fecha, contrasena, correo) {
     const issue = {
       nombre: nombre,

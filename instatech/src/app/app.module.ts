@@ -13,11 +13,16 @@ import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 
 import { IssueService } from './issue.service';
+import { LoginComponent } from './components/login/login.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
   { path: 'registro', component: CreateComponent},
   { path: 'actualizar/:id', component: EditComponent},
+  { path: 'usuario/:correo', component: LoginComponent},
   { path: 'usuarios', component: ListComponent},
+  { path: 'usuario', component: UsuarioComponent},
+  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: 'usuarios', pathMatch: 'full'}
 ];
 
@@ -26,7 +31,9 @@ const routes: Routes = [
     AppComponent,
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,7 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.issueService.getIssueById(this.id).subscribe(res => {
+
         this.issue = res;
         this.updateForm.get('nombre').setValue(this.issue.nombre);
         this.updateForm.get('apellido1').setValue(this.issue.apellido1);
@@ -47,6 +48,7 @@ export class EditComponent implements OnInit {
         this.updateForm.get('correo').setValue(this.issue.correo);
       });
     });
+
   }
 
   updateIssue(nombre,apellido1,apellido2,fecha,contrasena,correo) {

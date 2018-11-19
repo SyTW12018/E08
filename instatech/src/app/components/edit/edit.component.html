@@ -1,11 +1,14 @@
 <div>
   <br>
   <mat-card>
+
     <section class="mat-typography">
       <h2>Actualizar datos</h2>
     </section>
+
     <mat-divider></mat-divider>
     <br>
+
     <form [formGroup]="updateForm" class="edit-form">
 
       <mat-form-field class="field-full-width">
@@ -34,8 +37,10 @@
 
       <mat-divider></mat-divider>
        <br><br>
+       
        <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
        <button type="submit" (click)="updateIssue(nombre.value, apellido1.value, apellido2.value, fecha.value, contrasena.value, correo.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Actualizar</button>
+
      </form>
    </mat-card>
  </div>

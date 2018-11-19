@@ -30,7 +30,7 @@ displayedColumns = ['nombre', 'apellido1', 'apellido2', 'fecha', 'contrasena', '
     .subscribe((data: Issue[]) => {
       this.issues = data;
       console.log('Data requested ...');
-      console.log(this.issues);
+      //console.log(this.issues);
     });
   }
 
