@@ -51,7 +51,7 @@ export class EditComponent implements OnInit {
 
   }
 
-  updateIssue(nombre,apellido1,apellido2,fecha,contrasena,correo) {
+  updateIssue(nombre, apellido1, apellido2, fecha, contrasena, correo) {
     this.issueService.updateIssue(this.id, nombre, apellido1, apellido2, fecha, contrasena, correo).subscribe(() => {
       this.snackBar.open('Datos actualizados con éxito', 'Aceptar', {
         duration: 3000,

@@ -4,6 +4,6 @@ export interface Issue {
   apellido1: String;
   apellido2: String;
   fecha: String;
-  contrasena:String;
+  contrasena: String;
   correo: String;
 }
