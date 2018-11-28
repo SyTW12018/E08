@@ -19,9 +19,9 @@ displayedColumns = ['nombre', 'apellido1', 'apellido2', 'fecha', 'contrasena', '
 
   ngOnInit() {
     this.fetchIssues();
-    // this.issueService.getIssues().subscribe((issues) => {
-    //   console.log(issues);
-    // });
+    this.issueService.getIssues().subscribe((issues) => {
+      console.log(issues);
+    });
   }
 
   fetchIssues() {

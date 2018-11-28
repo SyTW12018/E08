@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+
 import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { MatButtonModule, MatCardModule, MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/material';
 
@@ -16,6 +19,8 @@ import { EditComponent } from './components/edit/edit.component';
 import { IssueService } from './issue.service';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: 'registro', component: CreateComponent},
@@ -37,9 +42,11 @@ const routes: Routes = [
     UsuarioComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    // HttpClientTestingModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatToolbarModule,
@@ -52,9 +59,10 @@ const routes: Routes = [
     MatCardModule,
     MatTableModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
-  providers: [IssueService],
+  providers: [IssueService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

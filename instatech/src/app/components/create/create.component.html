@@ -1,45 +1,32 @@
-<div>
-  <br>
-  <mat-card>
 
-    <section class="mat-typography">
-      <h3>Registro de usuario</h3>
-    </section>
+  <div formGroupName="myLogin">
 
-    <mat-divider></mat-divider>
-    <br>
+      <h1>Inicio de sesión</h1>
 
-    <form [formGroup]="createForm" class="create-form">
+    <label>
+      <input type="text" placeholder="Nombre" formControlName="nombre">
+    </label>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Nombre" formControlName="nombre" #nombre>
-      </mat-form-field>
+    <label>
+      <input type="text" placeholder="Apellido 1" formControlName="apellido1">
+    </label>
+    
+    <label>
+      <input type="text" placeholder="Apellido 2" formControlName="apellido2">
+    </label>
+    
+    <label>
+      <input type="text" placeholder="Fecha de Nacimiento" formControlName="fecha">
+    </label>
+    
+    <label>      
+      <input type="password" placeholder="Contraseña" formControlName="contrasena">
+    </label>
+    
+    <label>
+      <input type="text" placeholder="Correo Electrónico" formControlName="correo">
+    </label>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Apellido 1" formControlName="apellido1" #apellido1>
-      </mat-form-field>
+    <button type="submit">Sign up</button>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Apellido 2" formControlName="apellido2" #apellido2>
-      </mat-form-field>
-
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Fecha de Nacimiento" formControlName="fecha" #fecha>
-      </mat-form-field>
-
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Contraseña" formControlName="contrasena" #contrasena>
-      </mat-form-field>
-
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Correo Electrónico" formControlName="correo" #correo>
-      </mat-form-field>
-
-      <mat-divider></mat-divider>
-      <br><br>
-      <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
-      <button type="submit" (click)="addIssue(nombre.value, apellido1.value, apellido2.value, fecha.value, contrasena.value, correo.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Guardar</button>
-    </form>
-
-    </mat-card>
-</div>
+  </div>

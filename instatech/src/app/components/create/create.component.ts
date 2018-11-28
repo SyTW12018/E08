@@ -1,35 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IssueService } from '../../issue.service';
+import { FormsModule, FormGroup, FormControl, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
+
 export class CreateComponent implements OnInit {
 
-  createForm: FormGroup;
+  myLogin: FormGroup;
+  nombre: String;
+  apellido1: String;
+  apellido2: String;  
+  fecha: String;
+  contrasena: String;
+  correo: String;  
 
-  constructor(private issueService: IssueService, private fb: FormBuilder, private router: Router) {
-    this.createForm = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido1: '',
-      apellido2: '',
-      fecha: '',
-      contrasena: '',
-      correo: ''
-    });
-  }
+  constructor(private fb: FormBuilder, private issueService: IssueService) { 
 
-  addIssue(nombre, apellido1, apellido2, fecha, contrasena, correo) {
-    this.issueService.addIssue(nombre, apellido1, apellido2, fecha, contrasena, correo).subscribe(() => {
-      this.router.navigate(['/usuarios']);
+    this.myLogin = new FormGroup({
+      nombre: new FormControl('', [Validators.required]),
+      apellido1: new FormControl(''),
+      apellido2: new FormControl(''),
+      fecha: new FormControl(''),
+      contrasena: new FormControl(''),
+      correo: new FormControl('')
+    });    
+
+   }
+
+
+  addIssue(router: Router) {
+    this.issueService.addIssue(this.nombre, this.apellido1, this.apellido2, this.fecha, this.contrasena, this.correo).subscribe(() => {
+      router.navigate(['/usuarios']);
     });
   }
 
   ngOnInit() {
+   
   }
 
 }
