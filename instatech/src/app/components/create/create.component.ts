@@ -12,7 +12,7 @@ import { first } from 'rxjs/operators';
 
 export class CreateComponent implements OnInit {
 
-  myLogin: FormGroup;
+  myCreate: FormGroup;
   nombre: String;
   apellido1: String;
   apellido2: String;  
@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private issueService: IssueService) { 
 
-    this.myLogin = new FormGroup({
+    this.myCreate = new FormGroup({
       nombre: new FormControl('', [Validators.required]),
       apellido1: new FormControl(''),
       apellido2: new FormControl(''),
@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit() { 
    
   }
 

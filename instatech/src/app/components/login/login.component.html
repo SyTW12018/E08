@@ -1,30 +1,20 @@
-<div>
-  <br>
-  <mat-card>
 
-    <section class="mat-typography">
-      <h1>Inicio de sesión</h1>
-    </section>
+<div formGroupName="myLogin">
 
-    <mat-divider></mat-divider>
-    <br>
+    <h1>Inicio de sesión</h1>
 
-    <form [formGroup]="loginForm" class="edit-form">
+  <label>
+      <input type="text" placeholder="Correo Electrónico" formControlName="correo">
+    </label>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Correo Electrónico" formControlName="correo" #correo>
-      </mat-form-field>
+  <label>      
+    <input type="password" placeholder="Contraseña" formControlName="contrasena">
+  </label>
+  
+ 
+  <button type="submit">Login</button>
 
-      <mat-form-field class="field-full-width">
-        <input type = "password" matInput placeholder="Contraseña" formControlName="contrasena" #contrasena>
-      </mat-form-field>
-
-      <mat-divider></mat-divider>
-       <br><br>
-       <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
-       <button type="submit" (click)="loginIssue(correo.value, contrasena.value)" [disabled]="loginForm.pristine || loginForm.invalid" mat-raised-button color="primary">Iniciar Sesión</button>
-     </form>
-
-
-    </mat-card>
+  <!-- <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
+  <button type="submit" (click)="loginIssue(correo.value, contrasena.value)" [disabled]="loginForm.pristine || loginForm.invalid" mat-raised-button color="primary">Iniciar Sesión</button> -->
+    
 </div>
