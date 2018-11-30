@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ROUTES } from '../../app.module';
 import { UsuarioComponent } from './usuario.component';
 
 describe('UsuarioComponent', () => {
@@ -23,3 +23,14 @@ describe('UsuarioComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+describe('Routes', () => {
+  it('Should exist route usuario', () => {
+    expect(ROUTES).toContain({
+      path: 'usuario',
+      component: UsuarioComponent
+    });
+  });
+});
+

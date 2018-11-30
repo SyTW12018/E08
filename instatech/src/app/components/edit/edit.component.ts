@@ -12,11 +12,13 @@ import { Issue } from '../../issue.model';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
+
 export class EditComponent implements OnInit {
 
   id: String;
   issue: any = {};
   updateForm: FormGroup;
+  title: string;
 
   // tslint:disable-next-line:max-line-length
   constructor(private issueService: IssueService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {

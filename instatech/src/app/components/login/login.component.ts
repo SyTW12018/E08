@@ -10,7 +10,6 @@ import { Issue } from '../../issue.model';
 import { filter } from 'rxjs/operators';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
   contrasena_usuario: String;
   issue: any = {};
   loginForm: FormGroup;
-
+  form: FormGroup;
   // tslint:disable-next-line:max-line-length
   constructor(private issueService: IssueService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {
     this.createForm();
@@ -34,6 +33,7 @@ export class LoginComponent implements OnInit {
       correo: ['', Validators.required],
       contrasena: ['', Validators.required]
     });
+    
   }
 
   ngOnInit() {

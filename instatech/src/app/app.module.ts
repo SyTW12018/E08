@@ -17,7 +17,7 @@ import { IssueService } from './issue.service';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 
-const routes: Routes = [
+export const ROUTES: Routes = [
   { path: 'registro', component: CreateComponent},
   { path: 'actualizar/:id', component: EditComponent},
   { path: 'usuario/:correo', component: LoginComponent},
@@ -40,7 +40,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     MatToolbarModule,
     MatFormFieldModule,
