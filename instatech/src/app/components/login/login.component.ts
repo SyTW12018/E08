@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
 import { IssueService } from '../../issue.service';
-import { Issue } from '../../issue.model';
-
 import { filter } from 'rxjs/operators';
-
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -22,8 +18,14 @@ export class LoginComponent implements OnInit {
   issue: any = {};
   loginForm: FormGroup;
   form: FormGroup;
-  // tslint:disable-next-line:max-line-length
-  constructor(private issueService: IssueService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private toastr: ToastrService) {
+
+
+  constructor(
+    private issueService: IssueService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private toastr: ToastrService) {
     this.createForm();
   }
 
@@ -38,8 +40,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
   animacion() {
+
     const elem = document.getElementById('myBar');
     let width = 1;
     const id = setInterval(frame, 8);
@@ -52,42 +54,58 @@ export class LoginComponent implements OnInit {
       }
     }
 
+    this.loginIssue();
+
   }
 
 
-  loginIssue(correo, contrasena) {
+  loginIssue() {
 
-    console.log('Probando', this.loginForm.get('correo').value);
-    this.correo_usuario = this.loginForm.get('correo').value;
+    // CORREO
+    // console.log('Array Completo', document.getElementById('correo'));
+    this.correo_usuario = document.getElementById('correo')['value'];
+    // console.log('valor solo', this.correo_usuario);
 
-    this.route.params.subscribe(params => {
+    // CONTRASEÑA
+    // console.log('Array Completo', document.getElementById('contrasena'));
+    const contrasena = document.getElementById('contrasena')['value'];
+    // console.log('valor solo', this.contrasena_usuario);
 
-      console.log('Probando 2', this.correo_usuario);
+    if ((contrasena !== '') && (this.correo_usuario !== '')) {
 
-      this.issueService.getIssues().subscribe(res => {
-        this.issue = res;
+      this.route.params.subscribe(() => {
+        this.issueService.getIssues().subscribe(res => {
+          this.issue = res;
+          // console.log('TODOS LOS USUARIOS', this.issue);
+          const correo = this.issue.filter(correos => correos.correo === this.correo_usuario);
+          // console.log('Contraseña de PRUEBA', correo[0]['contrasena']);
+          // console.log('Email', correo);
 
-        // this.correo = res.filter(
-        //   busca => busca.correo === this.correo_usuario);
-        // console.log('Prueba 2.1', this.correo[0][contrasena]);
+          const found = correo.find(function (element) {
+            return element = '[';
+          });
 
-        this.contrasena_usuario = this.correo[0][contrasena];
-        console.log('Prueba 2.12', contrasena);
-        console.log('Por favor', this.contrasena_usuario);
-        if (contrasena === (this.contrasena_usuario)) {
+          // console.log('Email PRUEBBA', lol);
+          if (found) {
+            // console.log("LOL");
+            this.contrasena_usuario = correo[0]['contrasena'];
+            console.log('Contraseña', this.contrasena_usuario);
 
-          this.toastr.success('Se ha iniciado sesión con éxito', 'Bienvenido');
-          this.router.navigate(['/usuario/']);
-
-        } else {
-
-          this.toastr.error('La contraseña o usuario son incorrectos', 'Error');
-        }
-
+            if (contrasena === (this.contrasena_usuario)) {
+              this.toastr.success('Se ha iniciado sesión con éxito', 'Bienvenido');
+              this.router.navigate(['/usuario/']);
+            } else {
+              this.toastr.error('La contraseña introducida es incorrecta', 'Error');
+            }
+          } else {
+            this.toastr.error('El correo introducido no existe', 'Error');
+          }
+        });
       });
 
-    });
 
+    } else {
+      this.toastr.error('Campos vacíos', 'Error');
+    }
   }
-
 }

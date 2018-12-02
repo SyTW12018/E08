@@ -19,14 +19,14 @@
 
       <div class="input-group">
         <p class="input-group-addon"><span class="glyphicon glyphicon-user"></span></p>
-        <input id="correo" type="text" class="form-control" name="correo" placeholder="Email" required>
+        <input id="correo" type="text" class="form-control" name="correo" placeholder="Email" #correo required>
       </div>
 
       <br>
 
       <div class="input-group">
         <p class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></p>
-        <input id="contrasena" type="password" class="form-control" name="contrasena" placeholder="Contraseña" required>
+        <input id="contrasena" type="password" class="form-control" name="contrasena" placeholder="Contraseña" #contrasena required>
       </div>
       <br>
 
@@ -35,7 +35,7 @@
 
       <!-- Animacion OK /-->
       <div class="modal-footer">
-        <button type="submit" class="form-control btn btn-primary" (click)="animacion()">Iniciar Sesión</button>
+        <button type="submit" class="form-control btn btn-primary" (click)="animacion( correo.value, contrasena.value)">Iniciar Sesión</button>
       </div>
 
       <div id="myProgress">
