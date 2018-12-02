@@ -17,7 +17,6 @@ describe('Routes', () => {
 // describe('Unit testing- Form testing', () => {
 //   let component: LoginComponent;
 
-   
 //   it('should create form with 2 controls', () => {
 //     expect(component.loginForm.contains('corre')).toBe(true);
 //     expect(component.loginForm.contains('contrasena')).toBe(true);

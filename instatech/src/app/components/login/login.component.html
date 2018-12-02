@@ -1,30 +1,74 @@
-<div>
-  <br>
-  <mat-card>
+<!DOCTYPE html>
+<html lang="es">
 
-    <section class="mat-typography">
-      <h1>Inicio de sesión</h1>
-    </section>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Login de una página web sobre reservas de eventos y de productos tecnológicos">
+  <meta name="keywords" content="reservas, productos, tecnología, Huawei, Samsung, Iphone, LG, Google, intel, Apple, IOS">
+  <meta name="author" content="Kathrina Arrocha Umpiérrez">
+  <meta name="author" content="Iván Josué Borges González">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <mat-divider></mat-divider>
+<body>
+
+  <div class="container">
+
+    <form>
+
+      <div class="input-group">
+        <p class="input-group-addon"><span class="glyphicon glyphicon-user"></span></p>
+        <input id="correo" type="text" class="form-control" name="correo" placeholder="Email" required>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <p class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></p>
+        <input id="contrasena" type="password" class="form-control" name="contrasena" placeholder="Contraseña" required>
+      </div>
+      <br>
+
+
+
+
+      <!-- Animacion OK /-->
+      <div class="modal-footer">
+        <button type="submit" class="form-control btn btn-primary" (click)="animacion()">Iniciar Sesión</button>
+      </div>
+
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+
+    </form>
+
+
+    <div class="checkbox2">
+      <label>
+        <input type="checkbox"> Recordar sesión
+      </label>
+    </div>
     <br>
 
-    <form [formGroup]="loginForm" class="edit-form">
+    <div class="checkbox2">
+      <label>
+        <div class="help-block text-right"><a href="">Recordar contraseña</a></div>
+      </label>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Correo Electrónico" formControlName="correo" #correo>
-      </mat-form-field>
+      <div class="bottom text-center">
+        ¿No tienes cuenta? <a href="/registro"><b>Crea una cuenta</b></a>
+      </div>
 
-      <mat-form-field class="field-full-width">
-        <input type = "password" matInput placeholder="Contraseña" formControlName="contrasena" #contrasena>
-      </mat-form-field>
-
-      <mat-divider></mat-divider>
-       <br><br>
-       <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
-       <button type="submit" (click)="loginIssue(correo.value, contrasena.value)" [disabled]="loginForm.pristine || loginForm.invalid" mat-raised-button color="primary">Iniciar Sesión</button>
-     </form>
-
-
-    </mat-card>
     </div>
+    <br>
+
+
+
+
+  </div>
+
+</body>
+
+</html>
