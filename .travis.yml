@@ -27,4 +27,3 @@ script:
 
  notifications:
     slack: sytw:ltJpXZ5YTMJU2u0EjUA3ZYsB
-    on_success: always
