@@ -28,5 +28,5 @@ script:
 notifications:
   slack:
     rooms:
-      - secure: "sdfusdhfsdofguhdfgubdsifgudfbgs3453durghssecurestringidsuag34522irueg=ltJpXZ5YTMJU2u0EjUA3ZYsB#08"
+      - secure: "sdfusdhfsdofguhdfgubdsifgudfbgs3453durghssecurestringidsuag34522irueg=ltJpXZ5YTMJU2u0EjUA3ZYsB#e08"
     on_success: always
