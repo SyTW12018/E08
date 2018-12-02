@@ -25,8 +25,6 @@ script:
   # - xvfb-run npm run e2e
   - ng build --prod
 
-notifications:
-  slack:
-    rooms:
-      - secure: "sdfusdhfsdofguhdfgubdsifgudfbgs3453durghssecurestringidsuag34522irueg=ltJpXZ5YTMJU2u0EjUA3ZYsB#e08"
+ notifications:
+    slack: sytw:ltJpXZ5YTMJU2u0EjUA3ZYsB
     on_success: always
