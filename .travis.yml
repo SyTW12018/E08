@@ -1,30 +1,23 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 sudo: false
-
 branches:
   only:
   - master
-
 install:
-  - sudo apt install xvfb
-  - npm install -g @angular/cli
-
+- sudo apt install xvfb
+- npm install -g @angular/cli
 before_script:
-  - cd instatech
-  - npm install
-
+- cd instatech
+- npm install
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 script:
-  - npm run lint
-  - npm run build
-  # - xvfb-run npm run e2e
-  - ng build --prod
-
- #notifications:
- #   slack: sytw:ltJpXZ5YTMJU2u0EjUA3ZYsB
-    
+- npm run lint
+- npm run build
+- ng build --prod
+notifications:
+  slack:
+    secure: JhojPd0PPmxBUSgkgbdSKWCGwAPr8NjqmE3bu4T7eucvFmb2NiO4Rrn+dxIX4Twy18GDpBKC/QldSHgWGAvNrWRP0fYjQCoBVdKMezKfazl8ASMFHgHoPUEUws66+HF8474guH6l5IPUfIsgqK2USv+oXyUrQhYjeyB/kL/nwLq1bYpVO7RpLJv2YqymnTxelqibANVLxw+S1bxXAYxmFDMbLsurcY5X+iaawCVB5AugAFdEUihSoDwXTezA59ntntmRmbKZk7mirIIXoHwvZPTBlD5gAZcofcAiuANnH7DQfkpKp9ZhTMO8yU4Zd+UGYXhKSWe9OPUM63jgnDW5ETZ0VUQLvSx3s4E1mpBv+dZ/GqaJr8CCnHlJEdfalKAa8glctWPWDQQZ3viV597oEMbhwYjMdpl16n8oxVaHj9RZ2n5XSc2hna9AnvHOxs069xhxj+a8mQjtPxZiC56LtMOWR8ReRywR1bI5nPl//8AtoKOhooF/elVL8gIqIwmR6OayRBHGyIGgO2Nkas+LhHE1/p21lsMsOoj5wYk8ckAt8KL6OJLI/1CYKnYqioCDGAPAMt+a/+QwYp2Tpn9bkk1TUzUJK9MjB1lZsShicb2UWucXJitlE5Iem8xR45xyIooUI5xEtG9qTfSkUva+Xt1QcZ4vMZJSI//+hxZ1BVI=
