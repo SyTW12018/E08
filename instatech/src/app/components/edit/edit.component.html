@@ -1,46 +1,110 @@
-<!-- <div>
-  <br>
-  <mat-card>
+<!DOCTYPE html>
+<html lang="es">
 
-    <section class="mat-typography">
-      <h2>Actualizar datos</h2>
-    </section>
+<head>
+  <meta charset='utf-8'>
 
-    <mat-divider></mat-divider>
-    <br>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registro de una página web sobre reservas de eventos y de productos tecnológicos">
+  <meta name="keywords" content="reservas, productos, tecnología, Huawei, Samsung, Iphone, LG, Google, intel, Apple, IOS">
+  <meta name="author" content="Kathrina Arrocha Umpiérrez">
+  <meta name="author" content="Iván Josué Borges González">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <form [formGroup]="updateForm" class="edit-form">
+<body>
+  <div class="container">
+    <!-- <div class="row"> -->
+    <!-- <div class="row main"> -->
+    <div class="main-login main-center">
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Nombre" formControlName="nombre" #nombre>
-      </mat-form-field>
+      <form [formGroup]="updateForm" class="edit-form">
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Apellido 1" formControlName="apellido1" #apellido1>
-      </mat-form-field>
+        <div class="form-group">
+          <label for="nombre" class="cols-sm-2 control-label">Nombre:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduzca su nombre."
+                formControlName="nombre" #nombre required />
+            </div>
+          </div>
+        </div>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Apellido 2" formControlName="apellido2" #apellido2>
-      </mat-form-field>
+        <div class="form-group">
+          <label for="apellido1" class="cols-sm-2 control-label">Apellido 1:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="apellido1" id="apellido1" placeholder="Introduzca su primer apellido."
+                formControlName="apellido1" #apellido1 required />
+            </div>
+          </div>
+        </div>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Fecha de Nacimiento" formControlName="fecha" #fecha>
-      </mat-form-field>
+        <div class="form-group">
+          <label for="apellido2" class="cols-sm-2 control-label">Apellido 2:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="apellido2" id="apellido2" placeholder="Introduzca su segundo apellido."
+                formControlName="apellido2" #apellido2>
+            </div>
+          </div>
+        </div>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Contraseña" formControlName="contrasena" #contrasena>
-      </mat-form-field>
+        <div class="form-group">
+          <label for="fecha" class="cols-sm-2 control-label">Fecha:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Introduzca su fecha de nacimiento. "
+                formControlName="fecha" #fecha (focusout)="respuesta_Fecha( fecha.value )" required />
+            </div>
+          </div>
+        </div>
 
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Correo Electrónico" formControlName="correo" #correo>
-      </mat-form-field>
+        <div class="form-group">
+          <label for="contrasena" class="cols-sm-2 control-label">Contrasena:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="contrasena" id="contrasena" placeholder="Introduzca su contraseña."
+                formControlName="contrasena" #contrasena (focus)="mensaje_contrasenia_dentro(  )" (focusout)="mensaje_contrasenia_fuera( )"
+                required />
+            </div>
+          </div>
+        </div>
 
-      <mat-divider></mat-divider>
-       <br><br>
-       
-       <button mat-raised-button color="accent" routerLink="/usuarios">Atrás</button>&nbsp;
-       <button type="submit" (click)="updateIssue(nombre.value, apellido1.value, apellido2.value, fecha.value, contrasena.value, correo.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Actualizar</button>
+        <div class="form-group">
+          <label for="correo" class="cols-sm-2 control-label">Correo:</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="correo" id="correo" placeholder="Introduzca su correo electrónico."
+                formControlName="correo" #correo (focusout)="respuesta_email( correo.value )" required />
+            </div>
+          </div>
+        </div>
 
-     </form>
-   </mat-card>
- </div> -->
+
+
+        <br><br>
+
+        <button class="form-control btn btn-secundary" routerLink="/usuarios">Atrás</button>&nbsp;
+        <button type="submit" class="form-control btn btn-primary" (click)="updateIssue(nombre.value, apellido1.value, apellido2.value, fecha.value, contrasena.value, correo.value)">Actualizar</button>
+
+      </form>
+
+
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- </div> -->
+
+ 
+</body>
+
+
+</html>

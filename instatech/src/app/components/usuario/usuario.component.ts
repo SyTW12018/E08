@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { IssueService } from '../../issue.service';
+import { filter } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-usuario',
@@ -7,9 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private issueService: IssueService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private toastr: ToastrService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

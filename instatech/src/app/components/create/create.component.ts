@@ -5,6 +5,7 @@ import { IssueService } from '../../issue.service';
 
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -16,7 +17,13 @@ export class CreateComponent implements OnInit {
   createForm: FormGroup;
 
 
-  constructor(private issueService: IssueService, private fb: FormBuilder, private router: Router, @Inject(DOCUMENT) document) {
+  constructor(
+    private issueService: IssueService,
+    private fb: FormBuilder,
+    private router: Router,
+    @Inject(DOCUMENT) document,
+    private toastr: ToastrService) {
+
     this.createForm = this.fb.group({
       nombre: ['', Validators.required],
       apellido1: '',
@@ -25,6 +32,7 @@ export class CreateComponent implements OnInit {
       contrasena: '',
       correo: ''
     });
+
   }
 
 
@@ -54,7 +62,7 @@ export class CreateComponent implements OnInit {
       // alert('El email ' + email + ' es correcto');
     } else {
 
-      alert('El email ' + email + ' está incorrecto');
+      this.toastr.error('El email no es correcto', 'Error');
     }
   }
 
@@ -69,7 +77,7 @@ export class CreateComponent implements OnInit {
 
   validar_contrasena(contrasenia, contrasenia2) {
     if (contrasenia !== contrasenia2) {
-      alert('Las contraseñas deben de coincidir');
+      this.toastr.error('Las contraseñas deben coincidir', 'Error');
       return false;
     } else {
       // alert('Todo esta correcto');
@@ -83,11 +91,9 @@ export class CreateComponent implements OnInit {
 
     if (this.validarFecha(fecha)) {
 
-      alert('La fecha ' + fecha + ' es correcta');
+      // alert('La fecha ' + fecha + ' es correcta');
     } else {
-
-      alert('La fecha ' + fecha + ' está incorrecta, debe ser en formato: (dd-mm-yyyy)');
-    }
+      this.toastr.error('La fecha ' + fecha + ' está incorrecta, debe ser en formato: (dd-mm-yyyy)', 'Error');    }
   }
 
   // --------------------------------------------------------------------------------//

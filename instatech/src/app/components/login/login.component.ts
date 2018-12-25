@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
       this.route.params.subscribe(() => {
         this.issueService.getIssues().subscribe(res => {
           this.issue = res;
-          // console.log('TODOS LOS USUARIOS', this.issue);
+          console.log('TODOS LOS USUARIOS', this.issue);
           const correo = this.issue.filter(correos => correos.correo === this.correo_usuario);
           // console.log('Contraseña de PRUEBA', correo[0]['contrasena']);
           // console.log('Email', correo);
