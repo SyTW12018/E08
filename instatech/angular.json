@@ -34,7 +34,13 @@
              "./node_modules/jquery/dist/jquery.slim.min.js",
              "./node_modules/popper.js/dist/umd/popper.min.js",
              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-             "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+             "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+             "./node_modules/eventos/theme_script.js",
+             "./node_modules/eventos/gallery_script.js",
+             "./node_modules/eventos/masonry.pkgd.min.js",
+             "./node_modules/eventos/imagesloaded.pkgd.min.js",
+             "./node_modules/eventos/jquery.min.js",
+             "./node_modules/eventos/bootstrap.min.js"
            ]
           },
           "configurations": {

@@ -1,0 +1,28 @@
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+
+img {
+    position: center;
+    vertical-align: middle;
+    max-height: 800px;
+    max-width: 1500px;
+    min-height: 800px;
+    min-width: 1500px;
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+} 
+
