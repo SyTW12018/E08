@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 
 import { AppComponent, SafePipe } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+
 
 import { IssueService } from './issue.service';
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +23,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AppWebComponent } from './components/app-web/app-web.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { ProductosComponent } from './components/productos/productos.component';
+
+import { CookieService } from 'ngx-cookie-service';
+// import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
 
@@ -49,7 +55,7 @@ export const ROUTES: Routes = [
     InicioComponent,
     AppWebComponent,
     EventosComponent,
-    ProductosComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +64,10 @@ export const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     FormsModule,
+    HttpModule,
     ToastrModule.forRoot()
   ],
-  providers: [IssueService],
+  providers: [IssueService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

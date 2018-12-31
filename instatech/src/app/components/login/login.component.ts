@@ -4,6 +4,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IssueService } from '../../issue.service';
 import { filter } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import { AppComponent } from 'src/app/app.component';
+
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-login',
@@ -22,9 +26,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private issueService: IssueService,
+    private app: AppComponent,
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
+    private cookieService: CookieService,
     private toastr: ToastrService) {
     this.createForm();
   }
@@ -80,6 +86,7 @@ export class LoginComponent implements OnInit {
           const correo = this.issue.filter(correos => correos.correo === this.correo_usuario);
           // console.log('Contraseña de PRUEBA', correo[0]['contrasena']);
           // console.log('Email', correo);
+          // console.log('Id', correo[0]['_id']);
 
           const found = correo.find(function (element) {
             return element = '[';
@@ -89,23 +96,38 @@ export class LoginComponent implements OnInit {
           if (found) {
             // console.log("LOL");
             this.contrasena_usuario = correo[0]['contrasena'];
-            console.log('Contraseña', this.contrasena_usuario);
+            // console.log('Contraseña', this.contrasena_usuario);
 
             if (contrasena === (this.contrasena_usuario)) {
               this.toastr.success('Se ha iniciado sesión con éxito', 'Bienvenido');
               this.router.navigate(['/usuario/']);
+              
+
+              this.app.aparece();
+
+
             } else {
               this.toastr.error('La contraseña introducida es incorrecta', 'Error');
             }
           } else {
             this.toastr.error('El correo introducido no existe', 'Error');
           }
+
+          this.app.ActiveCookies( correo[0]['_id'], correo[0]['nombre'], 'activo' );
+
+
+
         });
       });
 
 
+  
     } else {
       this.toastr.error('Campos vacíos', 'Error');
     }
   }
+
+
+
+
 }

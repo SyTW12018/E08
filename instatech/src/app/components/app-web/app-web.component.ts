@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TypewriterModule } from 'ng2-typewriter';
 import Typed from 'typed.js';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -10,7 +11,10 @@ import Typed from 'typed.js';
 })
 export class AppWebComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cookieService: CookieService,
+
+  ) { }
 
   ngOnInit() {
 
@@ -41,7 +45,7 @@ export class AppWebComponent implements OnInit {
       this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
       const that = this;
-      const delta = 200 - Math.random() * 100;
+      let delta = 200 - Math.random() * 100;
 
       if (this.isDeleting) { delta /= 2; }
 
@@ -61,7 +65,7 @@ export class AppWebComponent implements OnInit {
 
     window.onload = function () {
       const elements = document.getElementsByClassName('typewrite');
-      for (const i = 0; i < elements.length; i++) {
+      for (let i = 0; i < elements.length; i++) {
         const toRotate = elements[i].getAttribute('data-type');
         const period = elements[i].getAttribute('data-period');
         if (toRotate) {
@@ -75,10 +79,7 @@ export class AppWebComponent implements OnInit {
       document.body.appendChild(css);
     };
 
-
-
-
-
   }
+
 
 }

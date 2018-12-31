@@ -33,8 +33,6 @@
  
 }
 
-
-
 .btn{
   color: #ffffff;
   background-color: transparent;
@@ -94,4 +92,7 @@ body {
 }
 .footer {
   flex-shrink: 0;
+}
+#contenido {
+  color: white;
 }

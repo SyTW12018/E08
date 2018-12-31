@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UrlHandlingStrategy } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class IssueService {
     return this.http.get(`${this.uri}/issues`);
   }
 
+
   getIssueById(id) {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
@@ -21,6 +23,7 @@ export class IssueService {
   getIssueByCorreo(correo) {
     return this.http.get(`${this.uri}/issues/usuario/${correo}`);
   }
+
 
   addIssue(nombre, apellido1, apellido2, fecha, contrasena, correo) {
     const issue = {
@@ -49,4 +52,5 @@ export class IssueService {
   deleteIssue(id) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);
   }
+
 }

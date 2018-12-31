@@ -10,6 +10,8 @@ export class ProductosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }
