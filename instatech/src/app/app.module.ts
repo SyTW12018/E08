@@ -25,6 +25,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { ProductosComponent } from './components/productos/productos.component';
 
 import { CookieService } from 'ngx-cookie-service';
+import { InfoComponent } from './components/info/info.component';
 // import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
@@ -40,6 +41,7 @@ export const ROUTES: Routes = [
   { path: 'inicio', component: InicioComponent},
   { path: 'eventos', component: EventosComponent},
   { path: 'productos', component: ProductosComponent},
+  { path: 'nosotros', component: InfoComponent},
   { path: '', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 
@@ -55,7 +57,8 @@ export const ROUTES: Routes = [
     InicioComponent,
     AppWebComponent,
     EventosComponent,
-    ProductosComponent
+    ProductosComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

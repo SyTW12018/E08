@@ -79,7 +79,8 @@ footer {
   padding-top: 22px;
 }
 
-
+/* FORMA DE ADAPTAR */
+/* 
 html, body {
   height: 100%;
 }
@@ -92,13 +93,21 @@ body {
 }
 .footer {
   flex-shrink: 0;
+} */
+
+
+html {
+  height: 100%;
 }
-#contenido {
-  color: white;
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto;
 }
-
-
-
+.footer {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
 
 
 /* Dropdown */

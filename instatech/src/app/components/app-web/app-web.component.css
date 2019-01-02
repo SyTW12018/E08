@@ -1,6 +1,32 @@
+/* Animacion */
+
 body {
-    text-align: center;
-    padding-top:0.4em;
-  }
-  
-  * { color:rgb(2, 2, 2); text-decoration: none;}
+  text-align: center;
+  padding-top: 0.4em;
+  /* width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center; */
+}
+
+* {
+  color: rgb(2, 2, 2);
+  text-decoration: none;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.content {
+  min-height: 100%;
+}
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+.footer {
+  height: 50px;
+  margin-top: -50px;
+}

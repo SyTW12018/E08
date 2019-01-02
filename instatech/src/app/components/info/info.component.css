@@ -1,0 +1,72 @@
+
+.somos{
+	width:70%; 	
+    height:70%; 
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+	text-align: justify;
+	padding-left: 2%;
+    padding-right: 2%;
+  
+	
+	border-radius: 20px;
+
+    margin-top:2%;
+    margin-bottom:2%;
+	background-color:rgba(236, 228, 228, 0.4);
+	box-shadow: 0px 0px 30px rgba(17, 19, 121, 0.2);
+	text-align: center; 
+} 
+
+.letra{
+    font-size: 26px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+}
+
+.nosotros{
+    /* width: 10%;
+    height: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   */
+}
+
+#nosotros1{
+    width: 10%;
+    height: 10%;
+    display: block;
+    margin-left: 20%;
+    margin-right: auto;
+}
+
+ #nosotros2{
+    width: 10%;
+    height: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: 20%;
+    margin-top: -10%;
+}
+
+
+body{
+   background-image: url("http://www.mariux.com.ar/wp-content/uploads/2012/01/nubes.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   background-image: linear-gradient(rgb(142, 179, 228), rgb(255, 255, 255)); 
+
+}
+
+
+
+
+
