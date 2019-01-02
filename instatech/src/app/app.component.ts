@@ -32,7 +32,7 @@ export class SafePipe implements PipeTransform {
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'InstaTech';
 
 
@@ -47,27 +47,29 @@ export class AppComponent {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.comprueba();
 
-
-
-
-    // user.DeactivateCookies();
-    // user.DeleteCookies();
   }
 
 
   aparece() {
 
 
-    var contenido = document.getElementById('contenido');
+    // var contenido = document.getElementById('contenido');
+    // contenido.innerHTML = '<div id="bienvenida"> Bienvenid@ ' + nombre + ' </div>';
 
     const nombre = this.cookieService.get('Usuario_nombre');
+    document.getElementById('contenido').style.display = 'block';
 
-    contenido.innerHTML = '<div id="bienvenida"> Bienvenid@ ' + nombre + ' </div>';
-    document.getElementById('boton_cierre').style.display = 'block';
+
+    const boton = document.getElementById('boton_usuario');
+    // boton.innerHTML = 'Hola ' + nombre ;
+    boton.innerHTML = nombre;
+
+    // this.toastr.success('Se ha iniciado sesión con éxito', 'Bienvenido');
+
 
 
   }
@@ -75,11 +77,11 @@ export class AppComponent {
 
   Desaparece() {
 
-    var contenido = document.getElementById('contenido');
-    var sesion = document.getElementById('sesion_id');
+    const contenido = document.getElementById('contenido');
+    const sesion = document.getElementById('sesion_id');
 
-    contenido.innerHTML = "";
-    sesion.innerHTML = "";
+    contenido.innerHTML = '';
+    sesion.innerHTML = '';
 
 
   }
@@ -104,7 +106,9 @@ export class AppComponent {
 
     // console.log("Desactivado todo");
     // console.log(this.cookieService.get('Estado'));
-    document.getElementById('boton_cierre').style.display = 'none';
+    document.getElementById('contenido').style.display = 'none';
+    this.router.navigate(['/inicio']);
+
 
 
   }
@@ -113,8 +117,8 @@ export class AppComponent {
 
   comprueba() {
 
-    var sesion = document.getElementById('boton_cierre');
-    sesion.onclick = this.Desaparece;
+    // var sesion = document.getElementById('boton_cierre');
+    // sesion.onclick = this.Desaparece;
 
 
     const estado = this.cookieService.get('Estado');
@@ -124,23 +128,25 @@ export class AppComponent {
 
     if (estado === 'activo') {
       this.aparece();
-      document.getElementById('boton_cierre').style.display = 'block';
-    }else{
-      document.getElementById('boton_cierre').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+    } else {
+      document.getElementById('contenido').style.display = 'none';
 
     }
 
-   
+  }
 
 
 
-
-
-
-
-
+  editar_datos() {
+    const id = this.cookieService.get('Usuario_id');
+    this.router.navigate(['/actualizar/' + id]);
 
   }
+
+
+
+
 
 }
 

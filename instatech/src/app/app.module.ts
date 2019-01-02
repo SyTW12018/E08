@@ -64,7 +64,6 @@ export const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     FormsModule,
-    HttpModule,
     ToastrModule.forRoot()
   ],
   providers: [IssueService, CookieService],

@@ -99,9 +99,8 @@ export class LoginComponent implements OnInit {
             // console.log('Contraseña', this.contrasena_usuario);
 
             if (contrasena === (this.contrasena_usuario)) {
-              this.toastr.success('Se ha iniciado sesión con éxito', 'Bienvenido');
-              this.router.navigate(['/usuario/']);
-              
+              this.toastr.success('Se ha iniciado sesión con éxito', 'Hola ' + correo[0]['nombre']);
+              this.router.navigate(['/eventos/']);
 
               this.app.aparece();
 
@@ -113,15 +112,13 @@ export class LoginComponent implements OnInit {
             this.toastr.error('El correo introducido no existe', 'Error');
           }
 
-          this.app.ActiveCookies( correo[0]['_id'], correo[0]['nombre'], 'activo' );
+          this.app.ActiveCookies(correo[0]['_id'], correo[0]['nombre'], 'activo');
 
 
 
         });
       });
 
-
-  
     } else {
       this.toastr.error('Campos vacíos', 'Error');
     }

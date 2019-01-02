@@ -76,7 +76,19 @@
 
   </ul>
 
-  <div id="contenido">  </div>
+ <div id="contenido" style='display:none;' >  
+
+  <div class="dropdown" id="Menu_usuario" >
+    <button class="dropbtn" id = "boton_usuario">Boton 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a (click) ="editar_datos()">Editar datos</a>   
+      <a (click)="DeleteCookies()">Cerrar Sesión</a>
+    </div>
+  </div> 
+
+</div>
 
   <button type="submit" id = "boton_cierre"  (click)="DeleteCookies()" style='display:none;'>Cerrar Sesion</button>
 

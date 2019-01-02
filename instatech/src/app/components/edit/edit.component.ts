@@ -61,7 +61,7 @@ export class EditComponent implements OnInit {
 
     this.toastr.success('Se han actualizado los datos con éxito', 'Correcto');
 
-      this.router.navigate(['/usuario']);
+      this.router.navigate(['/inicio']);
     });
   }
 
