@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TypewriterModule } from 'ng2-typewriter';
+// import { TypewriterModule } from 'ng2-typewriter';
 import Typed from 'typed.js';
 import { CookieService } from 'ngx-cookie-service';
 

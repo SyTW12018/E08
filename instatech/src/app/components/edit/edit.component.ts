@@ -66,6 +66,27 @@ export class EditComponent implements OnInit {
   }
 
 
+  // --------------------------------------------------------------------------------//
+
+  respuesta_Fecha(fecha) {
+
+    if (this.validarFecha(fecha)) {
+
+      // alert('La fecha ' + fecha + ' es correcta');
+    } else {
+      this.toastr.error('La fecha ' + fecha + ' está incorrecta, debe ser en formato: (dd-mm-yyyy)', 'Error');    }
+  }
+
+  // --------------------------------------------------------------------------------//
+
+  validarFecha(fecha) {
+    const re = /^[0-9][0-9]+-[0-9][0-9]+-[0-9][0-9][0-9][0-9]$/;
+    return re.test(fecha) ? true : false;
+  }
+
+  // --------------------------------------------------------------------------------//
+
+
   respuesta_email(email) {
 
     if (this.validar_email(email)) {
