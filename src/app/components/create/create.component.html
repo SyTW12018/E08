@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registro de una página web sobre reservas de eventos y de productos tecnológicos">
+  <meta name="keywords" content="reservas, productos, tecnología, Huawei, Samsung, Iphone, LG, Google, intel, Apple, IOS">
+  <meta name="author" content="Kathrina Arrocha Umpiérrez">
+  <meta name="author" content="Iván Josué Borges González">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <!-- <div class="row"> -->
+    <!-- <div class="row main"> -->
+    <div class="main-login main-center"> 
+    
+  
+      <form class="" method="post" action="#">
+        <div class="form-group">
+          <label for="nombre" class="cols-sm-2 control-label">Nombre</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduzca su nombre:"
+                #nombre required/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="apellido1" class="cols-sm-2 control-label">Apellido 1</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="apellido1" id="apellido1" placeholder="Introduzca su primer apellido:"
+                #apellido1 required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="apellido2" class="cols-sm-2 control-label">Apellido 2</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="apellido2" id="apellido2" placeholder="Introduzca su segundo apellido:"
+                #apellido2 />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha" class="cols-sm-2 control-label">Fecha de nacimiento</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Introduzca su fecha de nacimiento:"
+                #fecha (focusout)="respuesta_Fecha( fecha.value )" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="correo" class="cols-sm-2 control-label">Correo electrónico</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="correo" id="correo" placeholder="Introduzca su correo electrónico:"
+                #correo (focusout)="respuesta_email( correo.value )" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="cols-sm-2 control-label">Contraseña</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+              <input type="password" class="form-control" name="password" id="contrasena" placeholder="Introduzca su contraseña:"
+                #contrasena (focus)="mensaje_contrasenia_dentro(  )" (focusout)="mensaje_contrasenia_fuera( )"required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contrasena2" class="cols-sm-2 control-label">Confirma Contraseña</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+              <input type="password" class="form-control" name="contrasena2" id="contrasena2" placeholder="Confirme su contraseña:"
+                #contrasena2 (focusout)="validar_contrasena( contrasena.value, contrasena2.value )" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <a type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" (click)="addIssue(nombre.value, apellido1.value, apellido2.value, fecha.value, contrasena.value, correo.value)">Registrarse</a>
+        </div>
+
+        <div class="bottom text-center">
+          ¿Ya tienes una cuenta? <a href="/login" style="color:rgb(62, 62, 68);"><b>Inicia sesión</b></a>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- </div> -->
+
+
+  <div id="mensaje" #mensaje>
+    <h4>Requisitos de contraseña:</h4>
+    <ul>
+      <li id="letra" class="invalid" #letra>Al menos <strong>una letra</strong></li>
+      <li id="mayuscula" class="invalid" #mayuscula>Al menos <strong>una letra mayúscula</strong></li>
+      <li id="numero" class="invalid" #numero>Al menos <strong>un número</strong></li>
+      <li id="length" class="invalid" #length>Mínimo <strong>8 caracteres</strong></li>
+    </ul>
+  </div>
+
+
+</body>
+
+</html>

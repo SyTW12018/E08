@@ -1,16 +1,13 @@
 # InstaTech
 
 ```
-1. Iniciar Backend
+1. Preparar aplicacion
 
-$ npm install --save-dev babel-cli babel-preset-env
-$ npm install --save-dev babel-watch
-$ npm run dev
-
-2. Iniciar App InstaTech
-
-$ sudo npm install -g @angular/cli@latest
 $ npm install
+
+2. Iniciar App InstaTech (puerto 4000)
+
+$ npm start
 ```
 Alumnos: `Iván Josué Borges González` `Kathrina Arrocha Umpiérrez`
           alu0100880755@ull.edu.es     alu0100913293@ull.edu.es
