@@ -7,7 +7,7 @@ import { UrlHandlingStrategy } from '@angular/router';
 })
 export class IssueService {
 
-  uri = 'https://instatech-e8.herokuapp.com/';
+  uri = 'https://instatech-e8.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
